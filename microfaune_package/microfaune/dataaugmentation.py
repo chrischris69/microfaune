@@ -10,6 +10,31 @@ import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 from microfaune import plot
 
+
+
+
+
+"""
+from microfaune import audio
+import os
+
+os.chdir('/home/christian/microfaune/')
+s, data = audio.load_wav("./toy_data/bird1.wav")
+fs = 44100
+# From Cakir
+N_MELS = 40
+
+# MEL spec from STFT 40 ms and 20 ms overlap
+N_FFT = int(0.04 * fs) + 1
+HOP_LEN = int(0.02 * fs) + 1
+S = audio.create_spec(data[:(44100 * 10)], fs, n_mels = N_MELS, n_fft = N_FFT, hop_len = HOP_LEN)
+data = np.expand_dims(S, axis=2)
+#(40, 500, 1)
+
+samples = np.expand_dims(data, 0)
+#(1, 40, 500, 1)
+"""
+
 class DataAugmentation:
     """Class to generate image data for rnn modeling
     """
